@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice()
 {
     let choices = ["Rock", "Paper", "Scissors"];
@@ -22,43 +25,69 @@ function playRound()
     let playerSelection = getPlayerChoice();
 
     // the game begins
-    if (playerSelection === "rock" && computerSelection === "rock")
-    {
-        return "Rock meets rock. It's a tie.";y
+    if (playerSelection === "rock" && computerSelection === "rock") {
+        console.log("Rock meets rock. It's a tie.");
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
     }
+    else if (playerSelection === "rock" && computerSelection === "paper") {
+        console.log("Rock meets paper. You lose!");
+        computerScore += 1;
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    }
+    else if (playerSelection === "rock" && computerSelection === "scissors") {
+        console.log("Rock meets scissors. You win!");
+        playerScore += 1;
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    }
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
+        console.log("Paper meets scissors. You lose!");
+        computerScore += 1;
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    }   
+    else if (playerSelection === "paper" && computerSelection === "rock") {
+        console.log("Paper meets rock. You win!");
+        playerScore += 1;
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    }
+    else if (playerSelection === "paper" && computerSelection === "paper") {
+        console.log("Scissors meet paper. You win!");
+        playerScore += 1;
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    }
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
+        console.log("Scissors meet rock. You lose!");
+        computerScore += 1;
 
-    else if (playerSelection === "rock" && computerSelection === "paper")
-    {
-        return "Rock meets paper. You lose!";
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
     }
-    else if (playerSelection === "rock" && computerSelection === "scissors")
-    {
-        return "Rock meets scissors. You win!";
+    else if (playerSelection === "scissors" && computerSelection === "scissors") {
+        console.log("Scissors meet scissors. It's a tie!");
+        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
     }
-    else if (playerSelection === "paper" && computerSelection === "scissors")
-    {
-        return "Paper meets scissors. You lose!";
-    }
-    else if (playerSelection === "paper" && computerSelection === "rock")
-    {
-        return "Paper meets rock. You win!";
-    }
-    else if (playerSelection === "paper" && computerSelection === "paper")
-    {
-        return "Scissors meet paper. You win!";
-    }
-
-    else if (playerSelection === "scissors" && computerSelection === "rock")
-    {
-        return "Scissors meet rock. You lose!";
-    }
-
-    else if (playerSelection === "scissors" && computerSelection === "scissors")
-    {
-        return "Scissors meet scissors. It's a tie!";
-    }
-
 
 }
 
-playRound();
+function game()
+{  
+    for (let i = 0; i < 3; i++)
+    {
+        playRound();
+    }
+
+    if (computerScore > playerScore)
+    {
+        console.log("Computador wins :(");
+    }
+
+    else if (computerScore < playerScore)
+    {
+        console.log("You have beaten the Deep AI engine, congrats!");
+    }
+    
+    else if (computerScore === playerScore)
+    {
+        console.log("It's a tie between the AI's and you, humanity is in chaos, but safe. For now...");
+    }
+}
+
+game();
