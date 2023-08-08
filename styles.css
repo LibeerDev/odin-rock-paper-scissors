@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/azonix');
+
 body {
     margin: 0;
     display: flex;
@@ -9,29 +11,36 @@ body {
     background-size: cover; /* This ensures the image covers the entire element */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     backdrop-filter: blur(10px);
+    font-family: 'Azonix', sans-serif;
 }
 
-.header {
-    justify-content: center;
-    color: white;
+.header p{
+    color: yellow;
+    text-align: center;
+    font-size: 25px;
 }
 
-button {
-    width: 100px;
-    height: 100px;
+
+
+.startGameButton {
+    width: 200px;
+    height: 50px;
+    background-color: #2980b9;  
 }
 
 .buttons_div {
     gap: 15px;
     display: none;
+    width: 200px;
+    height: 100px;
 }
 
 .displayResults {
     color: white;
 }
 
-.mrBean {
-    width: 500px;
+.character {
+    width: 300px;
     position: fixed;
     align-self: flex-start;
 }
