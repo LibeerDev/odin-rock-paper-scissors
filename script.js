@@ -1,13 +1,16 @@
-const rock = document.getElementById("rock");
-const paper = document.getElementById("rock");
-const scissors = document.getElementById("rock");
-
-rock.addEventListener('click', playRound);
-paper.addEventListener('click', playRound);
-scissors.addEventListener('click', playRound);
-
 let playerScore = 0;
 let computerScore = 0;
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener('click', () => playRound("rock"));
+paper.addEventListener('click', () => playRound("paper"));
+scissors.addEventListener('click', () => playRound("scissors"));
+
+const resultsDiv = document.querySelector('.displayResults');
+const scoreDiv = document.querySelector('.displayScore');
 
 function getComputerChoice()
 {
@@ -27,50 +30,45 @@ function getPlayerChoice()
     return playerSelection;
 }
 
-function playRound()
+function playRound(choice)
 {
     let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
+    let playerSelection = choice;
 
     // the game begins
     if (playerSelection === "rock" && computerSelection === "rock") {
-        console.log("Rock meets rock. It's a tie.");
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }
-    else if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log("Rock meets paper. You lose!");
+        resultsDiv.textContent = "Rock meets rock. It's a tie.";
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        resultsDiv.textContent = "Rock meets paper. You lose!";
         computerScore += 1;
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }
-    else if (playerSelection === "rock" && computerSelection === "scissors") {
-        console.log("Rock meets scissors. You win!");
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        resultsDiv.textContent = "Rock meets scissors. You win!";
         playerScore += 1;
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-        console.log("Paper meets scissors. You lose!");
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        resultsDiv.textContent = "Paper meets scissors. You lose!";
         computerScore += 1;
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }   
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log("Paper meets rock. You win!");
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        resultsDiv.textContent = "Paper meets rock. You win!";
         playerScore += 1;
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }
-    else if (playerSelection === "paper" && computerSelection === "paper") {
-        console.log("Scissors meet paper. You win!");
+    } else if (playerSelection === "paper" && computerSelection === "paper") {
+        resultsDiv.textContent = "Scissors meet paper. You win!";
         playerScore += 1;
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
-    }
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log("Scissors meet rock. You lose!");
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        resultsDiv.textContent = "Scissors meet rock. You lose!";
         computerScore += 1;
+    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+        resultsDiv.textContent = "Scissors meet scissors. It's a tie!";
+    }
 
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+    scoreDiv.textContent = "";
+    scoreDiv.textContent += "\nPlayer score: " + playerScore + "    Computer score: " + computerScore;
+
+    if (playerScore >= 5) {
+        resultsDiv.textContent = "The humanity is now safe from AIs, congratulations for the win human";
     }
-    else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        console.log("Scissors meet scissors. It's a tie!");
-        console.log("Player score: " + playerScore + "    Computer score: " + computerScore);
+
+    if (computerScore >= 5) {
+        resultsDiv.textContent = "The robots created by Sam Altman have taken over the world, you have lost the battle";
     }
 
 }
