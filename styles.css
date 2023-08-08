@@ -18,9 +18,9 @@ body {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #3498db;
-    color: white;
-    border: none;
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -46,7 +46,6 @@ button:active {
     
 }
 
-
 .header p{
     color: yellow;
     text-align: center;
@@ -64,19 +63,19 @@ button:active {
     border: none;
 }
 
-.buttons_div {
-    gap: 15px;
-    display: none;
-    width: 200px;
-    height: 100px;
-}
 
 .displayResults {
     color: white;
+    padding-top: 20px;
+}
+
+.displayScore {
+    padding-top: 10px;
+    color: yellow;
 }
 
 .character {
-    width: 300px;
+    width: 45vh;
     position: fixed;
     align-self: flex-start;
     display: none;
@@ -102,10 +101,33 @@ button:active {
   }
 
 .robot {
-    width: 300px;
+    width: 45vh;
     position: fixed;
     align-self: flex-end;
     display: none;
     -webkit-user-drag: none;
 }
 
+.rock, .paper, .scissors{
+    width: 20vh;
+    height: 20vh;
+    display: none;
+    border: 1px solid black;
+}
+
+.rock {
+    background-image: url('images/rock.png');
+    background-size: 90%;
+}
+
+.paper {
+    background-image:url('images/paper.jpg');
+}
+
+.scissors {
+    background-image:url('images/scissors.png');
+}
+
+audio {
+    display: none;
+}
