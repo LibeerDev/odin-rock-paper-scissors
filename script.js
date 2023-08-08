@@ -1,3 +1,11 @@
+const rock = document.getElementById("rock");
+const paper = document.getElementById("rock");
+const scissors = document.getElementById("rock");
+
+rock.addEventListener('click', playRound);
+paper.addEventListener('click', playRound);
+scissors.addEventListener('click', playRound);
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -66,28 +74,3 @@ function playRound()
     }
 
 }
-
-function game()
-{  
-    for (let i = 0; i < 3; i++)
-    {
-        playRound();
-    }
-
-    if (computerScore > playerScore)
-    {
-        console.log("Computador wins :(");
-    }
-
-    else if (computerScore < playerScore)
-    {
-        console.log("You have beaten the Deep AI engine, congrats!");
-    }
-    
-    else if (computerScore === playerScore)
-    {
-        console.log("It's a tie between the AI's and you, humanity is in chaos, but safe. For now...");
-    }
-}
-
-game();
