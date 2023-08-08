@@ -4,13 +4,34 @@ let computerScore = 0;
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const character = document.querySelector(".character");
+const robot = document.querySelector(".robot")
 
 rock.addEventListener('click', () => playRound("rock"));
 paper.addEventListener('click', () => playRound("paper"));
 scissors.addEventListener('click', () => playRound("scissors"));
 
+const startButton = document.querySelector('.startGameButton')
 const resultsDiv = document.querySelector('.displayResults');
 const scoreDiv = document.querySelector('.displayScore');
+
+startButton.addEventListener('click', () => loadGame());
+
+function loadGame(){
+    const allElements = document.querySelectorAll('body *');
+    allElements.forEach(element => {
+        element.style.display = 'none';
+      });
+
+      character.style.display = 'block';
+      character.classList.add('animated');
+      character.style.opacity = '100%';
+
+      robot.style.display = 'block';
+      robot.classList.add('animated');
+      robot.style.opacity = '100%';
+      
+}
 
 function getComputerChoice()
 {
