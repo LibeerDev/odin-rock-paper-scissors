@@ -5,11 +5,10 @@ body {
     justify-content: center;
     height: 100vh;
     flex-direction: column;
-    background-image: url("images/pattern.webp");
+    background-image: url("images/wasteland.avif");
     background-size: cover; /* This ensures the image covers the entire element */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     backdrop-filter: blur(10px);
-    padding-top: 40vh;
 }
 
 .header {
@@ -24,5 +23,15 @@ button {
 
 .buttons_div {
     gap: 15px;
-    height: 1000px;
+    display: none;
+}
+
+.displayResults {
+    color: white;
+}
+
+.mrBean {
+    width: 500px;
+    position: fixed;
+    align-self: flex-start;
 }

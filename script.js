@@ -1,9 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
 rock.addEventListener('click', () => playRound("rock"));
 paper.addEventListener('click', () => playRound("paper"));
@@ -16,18 +16,6 @@ function getComputerChoice()
 {
     let choices = ["Rock", "Paper", "Scissors"];
     return computerSelection = choices[Math.floor(Math.random() * 3)].toLowerCase();      
-}
-
-function getPlayerChoice()
-{
-    let playerSelection = prompt("Choose either rock, paper or scissors!").toLowerCase();
-
-    if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors")
-    {
-        console.log('Error! Write either "rock", "paper" or "scissors"');
-    }
-
-    return playerSelection;
 }
 
 function playRound(choice)
