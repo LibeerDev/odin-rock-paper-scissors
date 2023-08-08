@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url("images/pattern.webp");
+    background-size: cover; /* This ensures the image covers the entire element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    backdrop-filter: blur(10px);
+    padding-top: 40vh;
+}
+
+.header {
+    justify-content: center;
+    color: white;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+}
+
+.buttons_div {
+    gap: 15px;
+    height: 1000px;
+}
