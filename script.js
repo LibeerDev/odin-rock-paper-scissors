@@ -16,6 +16,9 @@ const header = document.querySelector('.header')
 const rockSound = document.querySelector('.rockSound');
 const paperSound = document.querySelector('.paperSound');
 const scissorsSound = document.querySelector('.scissorsSound');
+const victoryScreenMusic = document.querySelector('.victoryScreenSound')
+const defeatScreenMusic = document.querySelector('.defeatScreenSound')
+const buttonClickSound = document.querySelector('.buttonClickSound')
 
 rock.addEventListener('click', () => playRound("rock"));
 paper.addEventListener('click', () => playRound("paper"));
@@ -26,8 +29,15 @@ function playMusic(){
     backgroundMusic.play();
 }
 
+function stopMusic(){
+    backgroundMusic.pause();
+}
+
 function loadGame(){
 
+    playMusic();
+    buttonClickSound.play();
+    buttonClickSound.volume -= 0.5;
     startButton.style.display = 'none';
     header.style.display = 'none';
 
@@ -93,10 +103,31 @@ function playRound(choice)
     scoreDiv.textContent += "\nPlayer score: " + playerScore + "    Computer score: " + computerScore;
 
     if (playerScore >= 5) {
+        const allElements = document.querySelectorAll('body *');
+        allElements.forEach(element => element.style.display = "none");
         resultsDiv.textContent = "The humanity is now safe from AIs, congratulations for the win human";
+        victoryScreen();
     }
 
     if (computerScore >= 5) {
+        const allElements = document.querySelectorAll('body *');
+        allElements.forEach(element => element.style.display = "none");
+        defeatScreen();
+        
+    }
+
+    function victoryScreen(){
+        stopMusic();
+        resultsDiv.style.display = "block";
+        resultsDiv.style.color = "yellow";
+        victoryScreenMusic.play();
+        resultsDiv.textContent = "You have dimished the AI ego, they leave you alone, at least for now...";
+        
+    }
+
+    function defeatScreen(){
+        stopMusic();
+        defeatScreenMusic.play();
         resultsDiv.textContent = "The robots created by Sam Altman have taken over the world, you have lost the battle";
     }
 
