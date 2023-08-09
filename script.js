@@ -132,7 +132,6 @@ function playRound(choice)
     } else if (playerSelection === "paper" && computerSelection === "paper") {
         paperSound.play();
         resultsDiv.textContent = "paper meets paper. It's a tie!";
-        playerScore += 1;
         tieSound.play();
         updateResultImgs("scissors", "paper");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {

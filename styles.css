@@ -259,7 +259,7 @@ audio {
     @media only screen and (orientation: landscape) {
         
         .playerResultImg, .computerResultImg {
-            margin-bottom: 20px;
+            margin-bottom: 10vh;
         }
       }
 
