@@ -24,6 +24,7 @@ button {
     background-position: center center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    border: none;
 }
 
 button:hover {
@@ -51,6 +52,7 @@ button:active {
     color: yellow;
     text-align: center;
     font-size: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -79,6 +81,8 @@ button:active {
 .character {
     width: 45vh;
     position: fixed;
+    margin-top: -10%;
+    margin-left: -3%;
     align-self: flex-start;
     display: none;
     -webkit-user-drag: none;
@@ -103,7 +107,8 @@ button:active {
   }
 
 .robot {
-    width: 45vh;
+    width: 30vh;
+    margin-right: 20px;
     position: fixed;
     align-self: flex-end;
     display: none;
@@ -114,7 +119,8 @@ button:active {
     width: 20vh;
     height: 20vh;
     display: none;
-    border: 1px solid black;
+    border-radius: 10%;
+    margin-bottom: 10%;
 }
 
 .rock {
@@ -135,11 +141,76 @@ audio {
 }
 
 .character {
-    animation: circularAnimation 3s infinite linear;
+    animation: circularAnimation 3.5s infinite linear;
 }
 
 .robot {
-    animation: circularAnimationReverse 3s infinite linear;
+    animation: circularAnimationReverse 3.5s infinite linear;
+}
+
+.victoryImg {
+    width: 100vh;
+    height: 50vh; /* Set the height as needed */
+    border-radius: 25px;
+    background-image: url('images/victory_img.jpg'); /* Replace with your image's path */
+    background-size: cover; /* Adjust how the image covers the div */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    display: none;
+}
+
+.defeatImg {
+    width: 100vh;
+    height: 50vh; /* Set the height as needed */
+    border-radius: 25px;
+    background-image: url('images/defeat_img.jpg'); /* Replace with your image's path */
+    background-size: cover; /* Adjust how the image covers the div */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    display: none;
+}
+
+.resetButton {
+    text-align: center;
+    font-size: large;
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(218, 133, 7);
+    font-family: 'Azonix';
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    padding-top: 10px;
+}
+
+.playerResultImg {
+    display: none;
+    background-color: white;
+    background-size: 10vh; /* Adjust how the image covers the div */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    width: 15vh;
+    height: 15vh;
+    align-self: flex-start;
+    background-position: center center;
+    position: absolute;
+    margin-top: 80vh;
+    margin-left: 10vh;
+    border-radius: 40%;
+}
+
+.computerResultImg {
+    position: absolute;
+    display: none;
+    margin-top: 80vh;
+    margin-right: 10vh;
+    border-radius: 40%;
+    background-color: white;
+    background-size: 10vh; /* Adjust how the image covers the div */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    width: 15vh;
+    height: 15vh;
+    align-self: flex-end;
+    background-position: center center;
 }
 
 @keyframes circularAnimation {
@@ -159,4 +230,31 @@ audio {
     100% {
         transform: rotate(0deg) translateX(10px) rotate(0deg);
     }
+}
+
+
+@media (max-width: 768px) {
+    .rock, .paper, .scissors{
+        width: 20vh;
+        height: 20vh;
+        display: none;
+    }
+
+    .character {
+        width: 20vh;
+        z-index: 1;
+    }
+    
+    .robot {
+        width: 15vh;
+        margin-right: -2%;
+        z-index: 1;
+    }
+
+    .playerResultImg, .computerResultImg {
+        width: 10vh;
+        height: 10vh;
+        margin-bottom: -10%;
+    }
+
 }

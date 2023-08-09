@@ -4,46 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
-
-<audio class="bgMusic" controls autoplay>
-    <source src="sounds/apocalyptic_music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="buttonClickSound" controls autoplay>
-    <source src="sounds/boom_click.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="rockSound" controls autoplay>
-    <source src="sounds/rock.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="paperSound" controls autoplay>
-    <source src="sounds/paper.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="scissorsSound" controls autoplay>
-    <source src="sounds/scissors.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="defeatScreenSound" controls autoplay>
-    <source src="sounds/defeat_music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<audio class="victoryScreenSound" controls autoplay>
-    <source src="sounds/victory_music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
 
 <link rel="stylesheet" href="styles.css">
 
 <body>
+    <div class="victoryImg"></div>
+    <div class="defeatImg"></div>
     <img class="character" src="images/alien.png" alt="character">
     <img class="robot" src="images/robot.png" alt="robot">
     <div class="header">
@@ -64,6 +32,9 @@
 
     <div class="displayResults"></div>
     <div class="displayScore"></div>
+    <div class="resetButton">Restart</div>
+    <div class="playerResultImg"></div>
+    <div class="computerResultImg"></div>
 </body>
 <script src="script.js"></script>
 </html>
