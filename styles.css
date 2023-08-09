@@ -256,4 +256,11 @@ audio {
         height: 10vh;
     }
 
+    @media only screen and (orientation: landscape) {
+        
+        .playerResultImg, .computerResultImg {
+            margin-bottom: 20px;
+        }
+      }
+
 }
