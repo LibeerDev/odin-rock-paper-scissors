@@ -149,7 +149,7 @@ function playRound(choice)
     }
 
     scoreDiv.textContent = "";
-    scoreDiv.textContent += "\nPlayer score: " + playerScore + "    Computer score: " + computerScore;
+    scoreDiv.textContent += playerScore + " : " + computerScore;
 
     if (playerScore >= 5) {
         const allElements = document.querySelectorAll('body *');
