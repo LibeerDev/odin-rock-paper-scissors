@@ -137,46 +137,70 @@ function playRound(choice)
         resultsDiv.textContent = "Rock meets rock. It's a tie.";
         updateResultImgs("rock", "rock");
         playAudioWithCallback(tieSound);
+        resultsDiv.style.color = "lightgrey";
+
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         playAudioWithCallback(rockSound);
         resultsDiv.textContent = "Rock meets paper. You lose!";
         computerScore += 1;
         updateResultImgs("rock", "paper");
         playAudioWithCallback(lostSound);
+        resultsDiv.style.color = "#ffcccb";
+
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playAudioWithCallback(rockSound);
         resultsDiv.textContent = "Rock meets scissors. You win!";
         playerScore += 1;
         updateResultImgs("rock", "scissors");
         playAudioWithCallback(wonSound);
+        resultsDiv.style.color = "lightgreen";
+
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         playAudioWithCallback(paperSound);
         resultsDiv.textContent = "Paper meets scissors. You lose!";
         computerScore += 1;
         updateResultImgs("paper", "scissors");
         playAudioWithCallback(lostSound);
+        resultsDiv.style.color = "#ffcccb";
+
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playAudioWithCallback(paperSound);
         updateResultImgs("paper", "rock");
         resultsDiv.textContent = "Paper meets rock. You win!";
         playerScore += 1;
         playAudioWithCallback(wonSound);
+        resultsDiv.style.color = "lightgreen";
+
     } else if (playerSelection === "paper" && computerSelection === "paper") {
         playAudioWithCallback(paperSound);
         resultsDiv.textContent = "paper meets paper. It's a tie!";
         playAudioWithCallback(tieSound);
         updateResultImgs("scissors", "paper");
+        resultsDiv.style.color = "lightgrey";
+
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         playAudioWithCallback(scissorsSound);
         resultsDiv.textContent = "Scissors meet rock. You lose!";
         computerScore += 1;
         updateResultImgs("scissors", "rock");
         playAudioWithCallback(lostSound);
+        resultsDiv.style.color = "#ffcccb";
+
     } else if (playerSelection === "scissors" && computerSelection === "scissors") {
         playAudioWithCallback(scissorsSound);
         playAudioWithCallback(tieSound);
         resultsDiv.textContent = "Scissors meet scissors. It's a tie!";
         updateResultImgs("scissors", "scissors");
+        resultsDiv.style.color = "lightgrey";
+    }
+
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
+    playAudioWithCallback(scissorsSound);
+    playAudioWithCallback(wonSound);
+    resultsDiv.textContent = "Scissors meets paper. You win!";
+    updateResultImgs("scissors", "paper");
+    playerScore += 1;
+    resultsDiv.style.color = "lightgreen";
     }
 
     scoreDiv.textContent = "";
