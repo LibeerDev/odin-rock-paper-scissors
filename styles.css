@@ -213,7 +213,6 @@ audio {
     height: 15vh;
     align-self: flex-end;
     background-position: center center;
-    opacity: 80%;
 }
 
 @keyframes circularAnimation {

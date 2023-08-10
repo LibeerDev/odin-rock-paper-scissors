@@ -43,6 +43,31 @@ defeatScreenMusic.load();
 buttonClickSound.load();
 backgroundMusic.load();
 
+// List of image URLs to preload
+const imageUrls = [
+    "images/wasteland.avif",
+    "images/rock.png",
+    "images/paper.jpg",
+    "images/scissors.png",
+    "images/victory_img.jpg",
+    "images/defeat_img.jpg"
+];
+
+// Preload images function
+function preloadImages() {
+    const preloadDiv = document.getElementById("preload-images");
+    
+    imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+        preloadDiv.appendChild(img);
+    });
+}
+
+// Call the preloadImages function when the page loads
+window.onload = preloadImages;
+
+
 defeatScreenMusic.volume = 0.5;
 backgroundMusic.volume = 0.5;
 
