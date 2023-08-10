@@ -235,7 +235,7 @@ function playRound(choice)
         victoryScreenMusic.currentTime = 2;
         victoryScreenMusic.play();
         resultsDiv.style.display = "block";
-        resultsDiv.style.color = "yellow";
+        resultsDiv.style.color = "green";
         resultsDiv.textContent = "You have dimished the AI ego, they leave you alone, at least for now...";
         victoryVoice.play();
         resetButton.style.display = "block";
@@ -247,7 +247,7 @@ function playRound(choice)
         defeatScreenMusic.play();
         defeatImg.style.display = "block";
         resultsDiv.style.display = "block";
-        resultsDiv.style.color = "yellow";
+        resultsDiv.style.color = "red";
         resultsDiv.textContent = "The robots have beaten you in gamba, now they no longer need you.";
         defeatVoice.play();
         resetButton.style.display = "block";
