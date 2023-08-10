@@ -67,11 +67,6 @@ function preloadImages() {
 // Call the preloadImages function when the page loads
 window.onload = preloadImages;
 
-window.onload = function() {
-    // Hide the loading screen
-    document.getElementById("loading-screen").style.display = "none";
-}
-
 
 defeatScreenMusic.volume = 0.5;
 backgroundMusic.volume = 0.5;

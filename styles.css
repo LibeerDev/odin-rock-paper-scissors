@@ -92,6 +92,15 @@ button:active {
 .character:hover{
     transform: none;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
   /* Apply animation to the image */
   .animated {
@@ -206,35 +215,6 @@ audio {
     background-position: center center;
 }
 
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Make sure the loading screen is on top of other content */
-    color: white;
-    gap: 10px;
-}
-
-#loading-animation {
-    border: 5px solid #ffffff;
-    border-top: 4px solid #cc9e08;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 @keyframes circularAnimation {
     0% {
         transform: rotate(0deg) translateX(10px) rotate(0deg);
@@ -253,15 +233,6 @@ audio {
         transform: rotate(0deg) translateX(10px) rotate(0deg);
     }
 }
-
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
 
 @media (max-width: 768px) {
@@ -287,11 +258,11 @@ audio {
         height: 10vh;
     }
 
-@media only screen and (orientation: landscape) {
+    @media only screen and (orientation: landscape) {
         
-    .playerResultImg, .computerResultImg {
-        margin-bottom: 15vh;
-    }
-    }
+        .playerResultImg, .computerResultImg {
+            margin-bottom: 10vh;
+        }
+      }
 
 }
