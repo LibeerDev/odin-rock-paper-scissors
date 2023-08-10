@@ -228,31 +228,33 @@ function playRound(choice)
         });
       }
 
-    function victoryScreen(){
+      function victoryScreen() {
         stopAllSounds();
         backgroundMusic.pause();
         victoryImg.style.display = "block";
         victoryScreenMusic.currentTime = 2;
         victoryScreenMusic.play();
         resultsDiv.style.display = "block";
-        resultsDiv.style.color = "green";
-        resultsDiv.textContent = "You have dimished the AI ego, they leave you alone, at least for now...";
+        resultsDiv.style.color = "#7cfc65";
+        resultsDiv.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.5)";
+        resultsDiv.textContent = "You have diminished the AI ego, they leave you alone, at least for now...";
         victoryVoice.play();
         resetButton.style.display = "block";
     }
-
-    function defeatScreen(){
+    
+    function defeatScreen() {
         stopAllSounds();
         backgroundMusic.pause();
         defeatScreenMusic.play();
         defeatImg.style.display = "block";
         resultsDiv.style.display = "block";
-        resultsDiv.style.color = "red";
+        resultsDiv.style.color = "#ff4f4f";
+        resultsDiv.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.5)";
         resultsDiv.textContent = "The robots have beaten you in gamba, now they no longer need you.";
         defeatVoice.play();
         resetButton.style.display = "block";
-
     }
+    
 
     function updateResultImgs(player, computer) {
         if (player === "rock") {
