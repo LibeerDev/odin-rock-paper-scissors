@@ -205,6 +205,8 @@ function playRound(choice)
 
     scoreDiv.textContent = "";
     scoreDiv.textContent += playerScore + " : " + computerScore;
+    scoreDiv.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.5)";
+    scoreDiv.style.zIndex = "9999";
 
     if (playerScore >= 5) {
         const allElements = document.querySelectorAll('body *');
