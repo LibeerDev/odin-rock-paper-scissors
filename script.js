@@ -175,7 +175,7 @@ function playRound(choice)
         playAudioWithCallback(paperSound);
         resultsDiv.textContent = "paper meets paper. It's a tie!";
         playAudioWithCallback(tieSound);
-        updateResultImgs("scissors", "paper");
+        updateResultImgs("paper", "paper");
         resultsDiv.style.color = "lightgrey";
 
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
